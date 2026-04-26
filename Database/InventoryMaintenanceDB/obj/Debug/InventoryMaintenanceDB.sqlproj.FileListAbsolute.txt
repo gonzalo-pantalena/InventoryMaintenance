@@ -1,0 +1,6 @@
+c:\Users\gfpan\source\repos\Inventary\InventoryMaintenance\Database\InventoryMaintenanceDB\bin\Debug\InventoryMaintenanceDB.dacpac
+c:\Users\gfpan\source\repos\Inventary\InventoryMaintenance\Database\InventoryMaintenanceDB\obj\Debug\InventoryMaintenanceDB.sqlproj.AssemblyReference.cache
+c:\Users\gfpan\source\repos\Inventary\InventoryMaintenance\Database\InventoryMaintenanceDB\obj\Debug\InventoryMaintenanceDB.dll
+c:\Users\gfpan\source\repos\Inventary\InventoryMaintenance\Database\InventoryMaintenanceDB\obj\Debug\InventoryMaintenanceDB.pdb
+c:\Users\gfpan\source\repos\Inventary\InventoryMaintenance\Database\InventoryMaintenanceDB\bin\Debug\InventoryMaintenanceDB.dll
+c:\Users\gfpan\source\repos\Inventary\InventoryMaintenance\Database\InventoryMaintenanceDB\bin\Debug\InventoryMaintenanceDB.pdb

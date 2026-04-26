@@ -1,0 +1,109 @@
+<section class="panel">
+  <div class="crumb">
+    <a routerLink="/equipment">← Equipment</a>
+  </div>
+
+  @if (equipment(); as eq) {
+    <header class="hero">
+      <h1>{{ eq.name }}</h1>
+      <p class="muted">
+        {{ eq.departmentName }} · {{ eq.equipmentTypeName }} · {{ eq.serialNumber }}
+      </p>
+    </header>
+  } @else if (!loading()) {
+    <p class="muted">Unknown equipment.</p>
+  }
+
+  @if (error(); as err) {
+    <div class="banner" role="alert">{{ err }}</div>
+  }
+
+  @if (loading()) {
+    <p class="muted">Loading…</p>
+  } @else if (equipment()) {
+    <div class="grid">
+      <div class="col">
+        <h2>Timeline</h2>
+        @if (!events().length) {
+          <p class="muted">No maintenance events yet.</p>
+        } @else {
+          <ol class="timeline">
+            @for (ev of events(); track ev.id) {
+              <li>
+                <div class="meta">
+                  <span class="tag">{{ ev.maintenanceTypeName }}</span>
+                  @if (ev.completedAt) {
+                    <span class="pill ok">Completed</span>
+                  } @else {
+                    <span class="pill warn">Open</span>
+                  }
+                </div>
+                <div class="when">
+                  Requested {{ ev.requestedAt | date: 'medium' }}
+                  @if (ev.completedAt) {
+                    · Completed {{ ev.completedAt | date: 'medium' }}
+                  }
+                </div>
+                <div class="by">Requested by {{ ev.requestedByName }}</div>
+                <ul class="notes">
+                  @for (line of ev.noteLines; track $index) {
+                    <li>{{ line }}</li>
+                  }
+                </ul>
+              </li>
+            }
+          </ol>
+        }
+      </div>
+
+      <div class="col">
+        @if (lookups(); as bundle) {
+          <div class="card">
+            <h2>New request</h2>
+            <form [formGroup]="createForm" (ngSubmit)="create()" class="stack">
+              <label>
+                <span>Type</span>
+                <select formControlName="maintenanceTypeId">
+                  @for (t of bundle.maintenanceTypes; track t.id) {
+                    <option [ngValue]="t.id">{{ t.name }}</option>
+                  }
+                </select>
+              </label>
+              <label>
+                <span>Description</span>
+                <textarea rows="4" formControlName="description"></textarea>
+              </label>
+              <label>
+                <span>Scheduled for (optional)</span>
+                <input type="datetime-local" formControlName="scheduledFor" />
+              </label>
+              <button type="submit" class="primary" [disabled]="saving()">Submit</button>
+            </form>
+          </div>
+
+          @if (openRecord(); as rec) {
+            <div class="card">
+              <h2>Update open record</h2>
+              <p class="muted small">Record #{{ rec.id }}</p>
+              <form [formGroup]="updateForm" (ngSubmit)="update()" class="stack">
+                <label>
+                  <span>Note</span>
+                  <textarea rows="3" formControlName="description"></textarea>
+                </label>
+                @if (isTechnician()) {
+                  <label class="inline">
+                    <input type="checkbox" formControlName="markCompleted" />
+                    <span>Mark completed</span>
+                  </label>
+                } @else {
+                  <p class="muted small">Only technicians can mark maintenance as completed.</p>
+                }
+                <button type="submit" class="ghost" [disabled]="saving()">Save update</button>
+              </form>
+            </div>
+          }
+        }
+      </div>
+    </div>
+  }
+</section>

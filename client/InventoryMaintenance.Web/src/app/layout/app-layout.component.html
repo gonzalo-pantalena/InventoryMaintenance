@@ -1,0 +1,22 @@
+<div class="shell">
+  <header class="topbar">
+    <div class="brand">
+      <span class="logo">IM</span>
+      <span class="title">Inventory maintenance</span>
+    </div>
+    <nav class="nav">
+      <a routerLink="/equipment" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Equipment</a>
+    </nav>
+    <div class="user">
+      @if (auth.user(); as u) {
+        <span class="who">{{ u.firstName }} {{ u.lastName }}</span>
+        <span class="role">{{ u.staffRoleName }}</span>
+      }
+      <button type="button" class="ghost" (click)="signOut()">Sign out</button>
+    </div>
+  </header>
+
+  <main class="main">
+    <router-outlet />
+  </main>
+</div>

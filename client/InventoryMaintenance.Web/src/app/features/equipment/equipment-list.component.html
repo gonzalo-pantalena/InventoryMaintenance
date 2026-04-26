@@ -1,0 +1,127 @@
+<section class="panel">
+  <div class="head">
+    <div>
+      <h1>Equipment</h1>
+      <p class="muted">Tenant-scoped inventory. Open a row to view maintenance history.</p>
+    </div>
+    <div class="actions">
+      <button type="button" class="ghost" (click)="reload()" [disabled]="loading()">Refresh</button>
+      @if (isAdmin()) {
+        <button type="button" class="primary" (click)="openAdd()">Add equipment</button>
+      }
+    </div>
+  </div>
+
+  @if (error(); as err) {
+    <div class="banner" role="alert">{{ err }}</div>
+  }
+
+  @if (showAdd() && lookups(); as bundle) {
+    <div class="drawer">
+      <h2>New equipment</h2>
+      <form [formGroup]="addForm" (ngSubmit)="saveNew()" class="grid-form">
+        <label>
+          <span>Department</span>
+          <select formControlName="departmentId">
+            @for (d of bundle.departments; track d.id) {
+              <option [ngValue]="d.id">{{ d.name }}</option>
+            }
+          </select>
+        </label>
+        <label>
+          <span>Equipment type</span>
+          <select formControlName="equipmentTypeId" (change)="onTypeChange(+($any($event.target).value))">
+            @for (t of bundle.equipmentTypes; track t.id) {
+              <option [ngValue]="t.id">{{ t.name }}</option>
+            }
+          </select>
+        </label>
+        <label>
+          <span>Application</span>
+          <select formControlName="equipmentApplicationId">
+            @for (a of filteredApplications(); track a.id) {
+              <option [ngValue]="a.id">{{ a.name }}</option>
+            }
+          </select>
+        </label>
+        <label class="wide">
+          <span>Name</span>
+          <input type="text" formControlName="name" />
+        </label>
+        <label>
+          <span>Brand</span>
+          <input type="text" formControlName="brand" />
+        </label>
+        <label>
+          <span>Model</span>
+          <input type="text" formControlName="model" />
+        </label>
+        <label>
+          <span>Year</span>
+          <input type="number" formControlName="year" />
+        </label>
+        <label class="wide">
+          <span>Serial number</span>
+          <input type="text" formControlName="serialNumber" />
+        </label>
+        <label class="wide">
+          <span>ECRI code</span>
+          <input type="text" formControlName="ecriCode" />
+        </label>
+        <label>
+          <span>Commissioned</span>
+          <input type="date" formControlName="commissionedOn" />
+        </label>
+        <label>
+          <span>Decommissioned</span>
+          <input type="date" formControlName="decommissionedOn" />
+        </label>
+        <div class="wide row">
+          <button type="submit" class="primary" [disabled]="saving()">Save</button>
+          <button type="button" class="ghost" (click)="cancelAdd()" [disabled]="saving()">Cancel</button>
+        </div>
+      </form>
+    </div>
+  }
+
+  @if (loading()) {
+    <p class="muted">Loading…</p>
+  } @else if (!items().length) {
+    <p class="muted">No equipment yet.</p>
+  } @else {
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Department</th>
+            <th>Type</th>
+            <th>Serial</th>
+            <th>Status</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (e of items(); track e.id) {
+            <tr>
+              <td class="strong">{{ e.name }}</td>
+              <td>{{ e.departmentName }}</td>
+              <td>{{ e.equipmentTypeName }}</td>
+              <td class="mono">{{ e.serialNumber }}</td>
+              <td>
+                @if (e.hasOpenMaintenance) {
+                  <span class="pill warn">Open maintenance</span>
+                } @else {
+                  <span class="pill ok">Clear</span>
+                }
+              </td>
+              <td class="right">
+                <button type="button" class="linkish" (click)="openMaintenance(e)">Maintenance</button>
+              </td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  }
+</section>

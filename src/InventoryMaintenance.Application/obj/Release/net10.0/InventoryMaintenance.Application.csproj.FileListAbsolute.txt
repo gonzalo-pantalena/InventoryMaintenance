@@ -1,0 +1,16 @@
+c:\Users\gfpan\source\repos\Inventary\InventoryMaintenance\src\InventoryMaintenance.Application\bin\Release\net10.0\InventoryMaintenance.Application.deps.json
+c:\Users\gfpan\source\repos\Inventary\InventoryMaintenance\src\InventoryMaintenance.Application\bin\Release\net10.0\InventoryMaintenance.Application.dll
+c:\Users\gfpan\source\repos\Inventary\InventoryMaintenance\src\InventoryMaintenance.Application\bin\Release\net10.0\InventoryMaintenance.Application.pdb
+c:\Users\gfpan\source\repos\Inventary\InventoryMaintenance\src\InventoryMaintenance.Application\bin\Release\net10.0\InventoryMaintenance.Domain.dll
+c:\Users\gfpan\source\repos\Inventary\InventoryMaintenance\src\InventoryMaintenance.Application\bin\Release\net10.0\InventoryMaintenance.Domain.pdb
+c:\Users\gfpan\source\repos\Inventary\InventoryMaintenance\src\InventoryMaintenance.Application\obj\Release\net10.0\InventoryMaintenance.Application.csproj.AssemblyReference.cache
+c:\Users\gfpan\source\repos\Inventary\InventoryMaintenance\src\InventoryMaintenance.Application\obj\Release\net10.0\InventoryMaintenance.Application.GeneratedMSBuildEditorConfig.editorconfig
+c:\Users\gfpan\source\repos\Inventary\InventoryMaintenance\src\InventoryMaintenance.Application\obj\Release\net10.0\InventoryMaintenance.Application.AssemblyInfoInputs.cache
+c:\Users\gfpan\source\repos\Inventary\InventoryMaintenance\src\InventoryMaintenance.Application\obj\Release\net10.0\InventoryMaintenance.Application.AssemblyInfo.cs
+c:\Users\gfpan\source\repos\Inventary\InventoryMaintenance\src\InventoryMaintenance.Application\obj\Release\net10.0\InventoryMaintenance.Application.csproj.CoreCompileInputs.cache
+c:\Users\gfpan\source\repos\Inventary\InventoryMaintenance\src\InventoryMaintenance.Application\obj\Release\net10.0\InventoryMaintenance.Application.sourcelink.json
+c:\Users\gfpan\source\repos\Inventary\InventoryMaintenance\src\InventoryMaintenance.Application\obj\Release\net10.0\Inventor.6973F875.Up2Date
+c:\Users\gfpan\source\repos\Inventary\InventoryMaintenance\src\InventoryMaintenance.Application\obj\Release\net10.0\InventoryMaintenance.Application.dll
+c:\Users\gfpan\source\repos\Inventary\InventoryMaintenance\src\InventoryMaintenance.Application\obj\Release\net10.0\refint\InventoryMaintenance.Application.dll
+c:\Users\gfpan\source\repos\Inventary\InventoryMaintenance\src\InventoryMaintenance.Application\obj\Release\net10.0\InventoryMaintenance.Application.pdb
+c:\Users\gfpan\source\repos\Inventary\InventoryMaintenance\src\InventoryMaintenance.Application\obj\Release\net10.0\ref\InventoryMaintenance.Application.dll

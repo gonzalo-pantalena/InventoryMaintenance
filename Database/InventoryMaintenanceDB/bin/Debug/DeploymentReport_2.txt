@@ -1,0 +1,64 @@
+﻿** Highlights
+     Tables that will be recreated with data migrated
+       None
+     Clustered indexes that will be dropped
+       None
+     Clustered indexes that will be created
+       None
+     Possible data issues
+       None
+
+** User actions
+     Create
+       [dbo].[Departments] (Table)
+       [dbo].[Departments].[IX_Departments_TenantId] (Index)
+       [dbo].[EquipmentApplications] (Table)
+       [dbo].[EquipmentApplications].[IX_EquipmentApplications_EquipmentTypeId] (Index)
+       [dbo].[EquipmentApplications].[IX_EquipmentApplications_TenantId_EquipmentTypeId_Name] (Index)
+       [dbo].[EquipmentItems] (Table)
+       [dbo].[EquipmentItems].[IX_EquipmentItems_DepartmentId] (Index)
+       [dbo].[EquipmentItems].[IX_EquipmentItems_EquipmentApplicationId] (Index)
+       [dbo].[EquipmentItems].[IX_EquipmentItems_EquipmentTypeId] (Index)
+       [dbo].[EquipmentItems].[IX_EquipmentItems_PublicId] (Index)
+       [dbo].[EquipmentItems].[IX_EquipmentItems_TenantId_SerialNumber] (Index)
+       [dbo].[EquipmentTypes] (Table)
+       [dbo].[EquipmentTypes].[IX_EquipmentTypes_TenantId_Name] (Index)
+       [dbo].[MaintenanceNotes] (Table)
+       [dbo].[MaintenanceNotes].[IX_MaintenanceNotes_MaintenanceRecordId] (Index)
+       [dbo].[MaintenanceRecords] (Table)
+       [dbo].[MaintenanceRecords].[IX_MaintenanceRecords_EquipmentId] (Index)
+       [dbo].[MaintenanceRecords].[IX_MaintenanceRecords_MaintenanceTypeId] (Index)
+       [dbo].[MaintenanceRecords].[IX_MaintenanceRecords_RequestedByStaffId] (Index)
+       [dbo].[MaintenanceRecords].[IX_MaintenanceRecords_TenantId] (Index)
+       [dbo].[MaintenanceTypes] (Table)
+       [dbo].[RefreshTokens] (Table)
+       [dbo].[RefreshTokens].[IX_RefreshTokens_StaffMemberId] (Index)
+       [dbo].[RefreshTokens].[IX_RefreshTokens_Token] (Index)
+       [dbo].[StaffMembers] (Table)
+       [dbo].[StaffMembers].[IX_StaffMembers_DepartmentId] (Index)
+       [dbo].[StaffMembers].[IX_StaffMembers_StaffRoleId] (Index)
+       [dbo].[StaffMembers].[IX_StaffMembers_TenantId_UserName] (Index)
+       [dbo].[StaffRoles] (Table)
+       [dbo].[Tenants] (Table)
+       [dbo].[FK_Departments_Tenants_TenantId] (Foreign Key)
+       [dbo].[FK_EquipmentApplications_EquipmentTypes_EquipmentTypeId] (Foreign Key)
+       [dbo].[FK_EquipmentApplications_Tenants_TenantId] (Foreign Key)
+       [dbo].[FK_EquipmentItems_Departments_DepartmentId] (Foreign Key)
+       [dbo].[FK_EquipmentItems_EquipmentApplications_EquipmentApplicationId] (Foreign Key)
+       [dbo].[FK_EquipmentItems_EquipmentTypes_EquipmentTypeId] (Foreign Key)
+       [dbo].[FK_EquipmentItems_Tenants_TenantId] (Foreign Key)
+       [dbo].[FK_EquipmentTypes_Tenants_TenantId] (Foreign Key)
+       [dbo].[FK_MaintenanceNotes_MaintenanceRecords_MaintenanceRecordId] (Foreign Key)
+       [dbo].[FK_MaintenanceRecords_EquipmentItems_EquipmentId] (Foreign Key)
+       [dbo].[FK_MaintenanceRecords_MaintenanceTypes_MaintenanceTypeId] (Foreign Key)
+       [dbo].[FK_MaintenanceRecords_StaffMembers_RequestedByStaffId] (Foreign Key)
+       [dbo].[FK_MaintenanceRecords_Tenants_TenantId] (Foreign Key)
+       [dbo].[FK_RefreshTokens_StaffMembers_StaffMemberId] (Foreign Key)
+       [dbo].[FK_StaffMembers_Departments_DepartmentId] (Foreign Key)
+       [dbo].[FK_StaffMembers_StaffRoles_StaffRoleId] (Foreign Key)
+       [dbo].[FK_StaffMembers_Tenants_TenantId] (Foreign Key)
+
+** Supporting actions
+
+The project and target databases have different collation settings. Deployment errors might occur.
+
