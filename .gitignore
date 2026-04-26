@@ -1,1 +1,47 @@
+# Environment & secrets
 .env
+.env.*.local
+*.pfx
+
+# .NET build outputs
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
+out/
+
+# Visual Studio / Rider
+.vs/
+*.user
+*.userosscache
+*.suo
+*.sln.docstates
+.idea/
+
+# SQL Server Data Tools (SSDT)
+*.dbmdl
+*.jfm
+*.publish.xml
+
+# Node / npm (client and tooling)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Angular
+.angular/
+dist/
+
+# Tests & coverage
+TestResults/
+[Tt]est[Rr]esult*/
+coverage/
+*.coverage
+*.coveragexml
+
+# OS
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
